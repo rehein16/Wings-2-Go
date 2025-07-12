@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wings 2 Go - Angeles City Pampanga</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header id="home" style="background-image: url('images/header.jpg');">
+    <nav>
+      <div class="logo">Wings 2 Go</div>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#hours">Hours</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </nav>
+    <div class="header-content">
+      <h1>Serving Flavourful Chicken Wings</h1>
+      <p>Delicious wings, fast and hot — Angeles City & San Fernando Pampanga</p>
+      <a href="#menu" class="btn">Get Your Wings!</a>
+    </div>
+  </header>
+
+  <section id="about" class="fade-in-section">
+    <h2>About Us</h2>
+    <p>Wings 2 Go is your go-to spot for mouthwatering, crispy, and flavorful chicken wings. With branches in Angeles City and San Fernando, Pampanga, we serve freshly cooked wings perfect for delivery or dine-in. We believe in fast service, honest flavors, and making every bite unforgettable!</p>
+  </section>
+
+  <section id="menu" class="fade-in-section">
+    <h2>Menu</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="images/menu1.jpg" alt="Menu Image 1" class="zoomable">
+      </div>
+      <div class="menu-item">
+        <img src="images/menu2.jpg" alt="Menu Image 2" class="zoomable">
+      </div>
+      <div class="menu-item">
+        <img src="images/menu3.jpg" alt="Menu Image 3" class="zoomable">
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="fade-in-section">
+    <h2>What Our Customers Say</h2>
+    <p>"Best wings in Pampanga! Crispy and tasty!" — Anna D.</p>
+    <p>"Fast delivery and great service." — Mark S.</p>
+    <p>"A must-try for wing lovers!" — Carlo M.</p>
+  </section>
+
+  <section id="hours" class="fade-in-section">
+    <h2>Hours</h2>
+    <p>🕒 Open daily: 10 AM - 10 PM</p>
+  </section>
+
+  <section id="contact" class="fade-in-section">
+    <h2>Contact Us</h2>
+    <p>📍 McArthur Highway Del Rosario, City of San Fernando, Pampanga (Across Pepsi & Pag-ibig)</p>
+    <p>📍 Unit 102 Omnistellar Bldg., Fil-Am Highway, Friendship Highway, Angeles City</p>
+    <p>📞 Call us at 0949-317-5959</p>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.682548212498!2d120.65932487587356!3d15.030887564997548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDAxJzUxLjIiTiAxMjDCsDM5JzMwLjciRQ!5e0!3m2!1sen!2sph!4v1597210141883!5m2!1sen!2sph" 
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Wings 2 Go. All rights reserved.</p>
+  </footer>
+
+  <a href="#menu" class="floating-order-btn">Order Now</a>
+  <button id="scrollTopBtn" title="Go to top">↑</button>
+
+  <!-- Modal for zoom -->
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    // Scroll to top
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+    scrollTopBtn.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Zoom modal
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.getElementsByClassName("close")[0];
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    // Fade-in
+    const fadeSections = document.querySelectorAll('.fade-in-section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeSections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
