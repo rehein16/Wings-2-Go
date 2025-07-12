@@ -38,8 +38,8 @@ header::before {
 nav {
   position: absolute;
   top: 20px;
-  left: 30px;
-  right: 30px;
+  left: 20px;
+  right: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,6 +49,10 @@ nav {
   font-weight: bold;
   font-size: 1.2rem;
   color: #ffcc29;
+}
+
+.nav-links {
+  display: flex;
 }
 
 .nav-links a {
@@ -95,7 +99,7 @@ nav {
   background: #8C161E;
   position: absolute;
   top: 60px;
-  right: 30px;
+  right: 20px;
   border-radius: 5px;
   padding: 10px;
 }
@@ -302,28 +306,61 @@ footer {
   transform: none;
 }
 
+/* Responsive: phones and small screens */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    background: #8C161E;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
   .nav-links a {
     margin: 10px 0;
+    text-align: right;
   }
+
   header {
     background-size: contain;
     background-position: top center;
     padding-top: 80px;
   }
+
   .header-content h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
+
   .header-content p {
     font-size: 1rem;
   }
+
   .btn {
     padding: 10px 20px;
     font-size: 0.9rem;
   }
+
+  section {
+    padding: 40px 15px;
+    margin: 30px 10px;
+  }
+
+  #about p {
+    font-size: 1rem;
+    text-indent: 20px;
+  }
+
   .menu-items {
     grid-template-columns: 1fr;
   }
