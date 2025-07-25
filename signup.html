@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wings 2 Go - Angeles City Pampanga</title>
+  <link rel="stylesheet" href="signup.css" />
+  <link rel="icon" type="image/x-icon" href="images/logo.jpg">
+</head>
+<body class="signup-bg">
+  <nav class="navbar elegant-navbar">
+    <div class="logo">Wings 2 Go</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <main class="signup-container refined">
+    <form id="signupForm" class="signup-form stylish-form">
+      <h2>Join the Wingdom</h2>
+      <p class="form-subtext">Be the first to know our spicy drops & exclusive offers.</p>
+
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="fname" placeholder="John" required />
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lname" placeholder="Doe" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="john@example.com" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="••••••••" required />
+
+      <label for="gender">Gender</label>
+      <div class="gender-options">
+        <label><input type="radio" name="gender" value="Male" required /> Male</label>
+        <label><input type="radio" name="gender" value="Female" /> Female</label>
+        <label><input type="radio" name="gender" value="Other" /> Other</label>
+      </div>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required />
+
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" name="contact" placeholder="09123456789" required />
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" placeholder="Your full address here..." rows="3" required></textarea>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="unique_user123" required />
+
+      <div class="btn-group">
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="reset" class="reset-btn">Reset</button>
+      </div>
+    </form>
+
+    <div id="outputBox" class="output-box">
+      <h3>Submitted Information</h3>
+      <p id="output"></p>
+    </div>
+    
+  </main>
+
+  <script>
+    const form = document.getElementById("signupForm");
+    const output = document.getElementById("output");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      let display = "";
+      data.forEach((value, key) => {
+        display += `<strong>${key}:</strong> ${value}<br>`;
+      });
+      output.innerHTML = display;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
