@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wings 2 Go</title>
+  <title>Wings 2 Go - Angeles City Pampanga</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="images/logo.jpg">
 </head>
 <body>
   <header id="home" style="background-image: url('images/header.jpg');">
     <nav>
       <div class="logo">Wings 2 Go</div>
       <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#hours">Hours</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#menu">Menu</a>
+        <a href="feature.html">Featured</a>
+        <a href="signup.html">Sign Up</a>
       </div>
       <div class="hamburger" id="hamburger">
         <div class="bar"></div>
@@ -50,16 +51,16 @@
     </div>
   </section>
 
+  <section id="hours" class="fade-in-section">
+    <h2>Hours</h2>
+    <p>🕒 Open daily: 10 AM - 10 PM</p>
+  </section>
+
   <section id="reviews" class="fade-in-section">
     <h2>What Our Customers Say</h2>
     <p>"Best wings in Pampanga! Crispy and tasty!" — Anna D.</p>
     <p>"Fast delivery and great service." — Mark S.</p>
     <p>"A must-try for wing lovers!" — Carlo M.</p>
-  </section>
-
-  <section id="hours" class="fade-in-section">
-    <h2>Hours</h2>
-    <p>🕒 Open daily: 10 AM - 10 PM</p>
   </section>
 
   <section id="contact" class="fade-in-section">
@@ -81,14 +82,12 @@
   <a href="#menu" class="floating-order-btn">Order Now</a>
   <button id="scrollTopBtn" title="Go to top">↑</button>
 
-  <!-- Modal for zoom -->
   <div id="modal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="modal-img">
   </div>
 
   <script>
-    // Hamburger
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     hamburger.addEventListener('click', () => {
@@ -96,7 +95,6 @@
       hamburger.classList.toggle('active');
     });
 
-    // Scroll to top
     const scrollTopBtn = document.getElementById("scrollTopBtn");
     window.onscroll = function() {
       if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -109,7 +107,6 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Zoom modal
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modal-img");
     const closeBtn = document.getElementsByClassName("close")[0];
@@ -128,7 +125,6 @@
       }
     }
 
-    // Fade-in
     const fadeSections = document.querySelectorAll('.fade-in-section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
