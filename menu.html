@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wings 2 Go - Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="images/logo.jpg">
+</head>
+<body>
+  <header style="background-image: url('images/header.jpg');">
+    <nav>
+      <div class="logo">Wings 2 Go</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="feature.html">Featured</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </nav>
+    <div class="header-content">
+      <h1>Our Menu</h1>
+      <p>Choose your favorite flavor and order now!</p>
+    </div>
+  </header>
+
+  <section id="menu" class="fade-in-section">
+    <h2>Menu</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="images/menu1.jpg" alt="Menu Item 1">
+        <h3>Family Bundle</h3>
+        <p>₱799</p>
+        <button class="btn" onclick="addToCart('Buffalo Wings', 199, 'images/menu1.jpg')">Order Now</button>
+      </div>
+      <div class="menu-item">
+        <img src="images/menu2.jpg" alt="Menu Item 2">
+        <h3>Wings Platter</h3>
+        <p>₱499</p>
+        <button class="btn" onclick="addToCart('Honey Garlic Wings', 219, 'images/menu2.jpg')">Order Now</button>
+      </div>
+      <div class="menu-item">
+        <img src="images/menu3.jpg" alt="Menu Item 3">
+        <h3>Tray of Wings</h3>
+        <p>₱229</p>
+        <button class="btn" onclick="addToCart('Teriyaki Wings', 229, 'images/menu3.jpg')">Order Now</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Wings 2 Go. All rights reserved.</p>
+  </footer>
+
+
+  <div class="cart-popup" id="cartPopup">Added to cart!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
