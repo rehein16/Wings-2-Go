@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wings 2 Go - Cart</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="images/logo.jpg">
+</head>
+<body>
+  <header style="background-image: url('images/header.jpg');">
+    <nav>
+      <div class="logo">Wings 2 Go</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="feature.html">Featured</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="cart.html" class="active">Cart <span id="cart-count" class="cart-count">0</span></a>
+      </div>
+    </nav>
+    <div class="header-content">
+      <h1>Your Cart</h1>
+      <p>Review your order before checkout</p>
+    </div>
+  </header>
+
+  <section class="fade-in-section">
+    <h2>Order Summary</h2>
+    <div id="cart-items" class="cart-container"></div>
+    <div id="cart-total" class="cart-total"></div>
+    <div class="cart-buttons">
+      <button class="btn checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+      <button class="btn btn-clear" onclick="clearCart()">Clear Cart 🗑️</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Wings 2 Go. All rights reserved.</p>
+  </footer>
+
+
+
+  <div class="cart-popup" id="cartPopup">Added to cart!</div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
