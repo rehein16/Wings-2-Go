@@ -14,9 +14,10 @@
       <div class="nav-links" id="navLinks">
         <a href="index.html#home">Home</a>
         <a href="index.html#about">About</a>
-        <a href="index.html#menu">Menu</a>
+        <a href="menu.html">Menu</a>
         <a href="feature.html">Featured</a>
         <a href="signup.html">Sign Up</a>
+        <a href="cart.html">Cart <span id="cart-count" class="cart-count">0</span></a>
       </div>
       <div class="hamburger" id="hamburger">
         <div class="bar"></div>
@@ -33,7 +34,13 @@
 
   <section id="about" class="fade-in-section">
     <h2>About Us</h2>
-    <p>Wings 2 Go is your go-to spot for mouthwatering, crispy, and flavorful chicken wings. With branches in Angeles City and San Fernando, Pampanga, we serve freshly cooked wings perfect for delivery or dine-in. We believe in fast service, honest flavors, and making every bite unforgettable!</p>
+    <p>
+      At <strong>Wings 2 Go</strong>, we bring people together through
+      the universal love of chicken wings. Each batch is cooked to
+      crispy perfection and coated with bold, unforgettable flavors.
+      Whether you’re dining in, grabbing take-out, or ordering for
+      delivery, we promise wings that are fast, hot, and satisfying.
+    </p>
   </section>
 
   <section id="menu" class="fade-in-section">
@@ -49,11 +56,6 @@
         <img src="images/menu3.jpg" alt="Menu Image 3" class="zoomable">
       </div>
     </div>
-  </section>
-
-  <section id="hours" class="fade-in-section">
-    <h2>Hours</h2>
-    <p>🕒 Open daily: 10 AM - 10 PM</p>
   </section>
 
   <section id="reviews" class="fade-in-section">
@@ -138,5 +140,9 @@
       observer.observe(section);
     });
   </script>
+
+  <div class="cart-popup" id="cartPopup">Added to cart!</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
